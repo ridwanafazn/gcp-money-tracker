@@ -8,7 +8,7 @@ class Record_model extends CI_Model {
     public function __construct() {
         $this->client = new Client([
             // TODO: Tambahkan Base URL API
-            'base_uri' => "base_url_backend_Anda",
+            'base_uri' => "https://backend-dot-submission-mgce-ridwan-afzn.et.r.appspot.com/",
         ]);
     }
 
@@ -39,7 +39,6 @@ class Record_model extends CI_Model {
 
         return $result;
     }
-
     public function getRecordById($id) {
         $response = $this->client->request('GET', '/getrecord/'.$id, []);
         $result = json_decode($response->getBody()->getContents(), true);
